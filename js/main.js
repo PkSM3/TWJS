@@ -1,24 +1,26 @@
-listGexfs();
-
-if(typeof(getUrlParam.file)!=="undefined"){
-    $.doTimeout(30,function (){
-        parse(getUrlParam.file);
-        nb_cats = scanCategories();  
-        pr("nb_cats: "+nb_cats);
-        listGexfs();
-        
-        if(nb_cats==1) bringTheNoise(getUrlParam.file,"mono");
-        else if(nb_cats==2) bringTheNoise(getUrlParam.file,"bi")
-        
-        $.doTimeout(30,function (){
-            if(typeof(gexfDict[getUrlParam.file])!=="undefined"){
-                $("#currentGraph").html(gexfDict[getUrlParam.file]);
-            } else $("#currentGraph").html(getUrlParam.file);
-            scanDataFolder();
-        });            
-    });
-} else {
-    window.location.href=window.location.origin+window.location.pathname+"?file="+mainfile;
+alert(mainfile)
+if (mainfile) {
+	listGexfs();
+	if(typeof(getUrlParam.file)!=="undefined"){
+	    $.doTimeout(30,function (){
+		parse(getUrlParam.file);
+		nb_cats = scanCategories();  
+		pr("nb_cats: "+nb_cats);
+		listGexfs();
+		
+		if(nb_cats==1) bringTheNoise(getUrlParam.file,"mono");
+		else if(nb_cats==2) bringTheNoise(getUrlParam.file,"bi")
+		
+		$.doTimeout(30,function (){
+		    if(typeof(gexfDict[getUrlParam.file])!=="undefined"){
+		        $("#currentGraph").html(gexfDict[getUrlParam.file]);
+		    } else $("#currentGraph").html(getUrlParam.file);
+		    scanDataFolder();
+		});            
+	    });
+	} else {
+	    window.location.href=window.location.origin+window.location.pathname+"?file="+mainfile;
+	}
 }
 
 function scanDataFolder(){
