@@ -1,4 +1,4 @@
-alert(mainfile)
+
 if (mainfile) {
 	listGexfs();
 	if(typeof(getUrlParam.file)!=="undefined"){
