@@ -388,7 +388,7 @@ function fullExtract(){
                 attributes:[], 
                 color:color
             });  // The graph node
-                
+
             // Attribute values
             var attvalueNodes = nodeNode.getElementsByTagName('attvalue');
             var atts={};
@@ -591,6 +591,11 @@ function extractFromJson(data){
     numberOfDocs=0;
     numberOfNGrams=0;
     
+    categories[catSoc]=catSoc;
+    categories[catSem]=catSem;
+    categoriesIndex[0]=catSoc;
+    categoriesIndex[1]=catSem;
+
     for(var i in nodesNodes){
             colorRaw = nodesNodes[i].color.split(",");
             color = '#'+sigma.tools.rgbToHex(

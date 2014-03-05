@@ -127,13 +127,11 @@ function bringTheNoise(pathfile,type){
 		    async: false,
 		    success : function(data){ 
 			extractFromJson(data);
-			pr("one");
 		    },
 		    error: function(){ 
 		        pr("Page Not found. parseCustom, inside the IF");
 		    }
 		});
-		pr("two");
 
 
 
@@ -142,7 +140,6 @@ function bringTheNoise(pathfile,type){
 
 	    }
     }
-    pr("three");
     if(fa2enabled==="off") $("#edgesButton").hide();
     updateEdgeFilter("social");
     updateNodeFilter("social");
